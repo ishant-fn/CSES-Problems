@@ -1,3 +1,7 @@
+// using the Greedy Algorithm.
+// doesn't use vectors to save memory and speed.
+// First finds the outer numbers in set 1 and then the inner numbers in set 2.
+
 #include <iostream>
 using namespace std;
 int main() {  
@@ -8,40 +12,39 @@ int main() {
     long long sum = 0; 
     cin >> n;
     sum = (n*(n+1))/2; 
-    if (n % 4 == 0) { 
-        if (sum % 2 == 0) { 
-          cout << "YES" << "\n"; 
-          sum /= 2; 
-          cout << (sum/(n+1))*2 << "\n"; 
-          while (i < sum/(n+1)) { 
-            cout << i + 1 << " " << n - i << " ";
-            ++i;
-          } 
-          cout << "\n" << n - (sum/(n+1))*2 << "\n";
-          while (i < sum/(n+1)*2) { 
-            cout << i + 1 << " " << n - i << " "; 
-            ++i; 
-          } 
-        } else { 
+    if (n % 4 == 0) {
+        if (sum % 2 == 0) {
+            cout << "YES" << "\n"; 
+            sum /= 2; 
+            cout << (sum/(n+1))*2 << "\n"; 
+            while (i < sum/(n+1)) { 
+                cout << i + 1 << " " << n - i << " ";
+                ++i;
+            } 
+            cout << "\n" << n - (sum/(n+1))*2 << "\n";
+            while (i < sum/(n+1)*2) { 
+                cout << i + 1 << " " << n - i << " "; 
+                ++i; 
+            } 
+        } else {
             cout << "NO"; 
-        } 
-      } else if (sum % 2 == 0) { 
+        }
+    } else if (sum % 2 == 0) { 
         cout << "YES" << "\n";
         sum /= 2;
         cout << (sum/(n+1))*2 + 1 << "\n";
         while (i < sum/(n+1)) {
-          cout << i + 1 << " " << n - i << " ";
-          ++i;
+            cout << i + 1 << " " << n - i << " ";
+            ++i;
         }
         cout << n - i << "\n";
         cout << n - ((sum/(n+1))*2 + 1) << "\n";
         while (i < sum/(n+1)*2 + 1) {
-          cout << i + 1 << " " << n - i - 1 << " ";
-          ++i;
+            cout << i + 1 << " " << n - i - 1 << " ";
+            ++i;
         }
-      } else {
+    } else {
         cout << "NO";
-      }
-    
+    }
     return 0;
 }
