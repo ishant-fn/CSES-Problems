@@ -46,7 +46,7 @@ int main()
                 cout << (char)(i + 'A');
             }
         }
-    }
+    } 
     if (Odd_Letter != '\0') {
         cout << Odd_Letter;
     }
